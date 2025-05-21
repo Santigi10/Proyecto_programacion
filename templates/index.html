@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="D2" content="width=device-width, initial-scale=1.0">
+    <title>Supermecado D2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+
+<body>
+    <nav>
+        <div class="enlace_navegacion" id="Inicio">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='imagenes/Logo_D1_RGB.png') }}" alt="" width="60px"
+                    height="60px">
+            </div>
+            <ul>
+                <li>
+                    <div class="contacto">
+                        <a href="#Productos">Produtos</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="container-fluid buscador">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscador" aria-label="Search" />
+                            <button class="btn btn-outline-light" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <a href="#Terminos">Terminos y condiciones</a>
+                </li>
+                <li>
+                    <div class="Carrito">
+                        <a href="">Carrito</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='imagenes/D1_banners_20250508_home_1746732667053.png') }}"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='imagenes/D1_banners_20250509_home_1746797778227.png') }}"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='imagenes/D1_banners_20250509_home_1746797777106.png') }}"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="row flex-container ">
+        <h1 id="Productos">Productos</h1>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/leche-65.png') }}" class="card-img-top" alt="Leche"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Leche</h5>
+                    <p class="card-text">$12.200.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/carne.png') }}" class="card-img-top" alt="Carne"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Carne</h5>
+                    <p class="card-text">$15.300.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/pollo.png') }}" class="card-img-top" alt="Pollo"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Pollo</h5>
+                    <p class="card-text">$14.800..</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/cereal.png') }}" class="card-img-top" alt="Cereal Pre"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Cereal Pre</h5>
+                    <p class="card-text">$6.500.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/yogurt.png') }}" class="card-img-top" alt="Yogurt"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Yogurt</h5>
+                    <p class="card-text">$2.300.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/pan.jpg') }}" class="card-img-top" alt="Pan"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Pan</h5>
+                    <p class="card-text">$9.500.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/papel de cocina.png') }}" class="card-img-top"
+                    alt="Papel de cocina" width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Papel de cocina</h5>
+                    <p class="card-text">$10.000.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/lonchera.webp') }}" class="card-img-top"
+                    alt="Lonchera" width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Lonchera</h5>
+                    <p class="card-text">$14.300.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/verduras.png') }}" class="card-img-top"
+                    alt="Verduras Mixta" width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Verduras mixta</h5>
+                    <p class="card-text">$20.000.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/cloro.jpg') }}" class="card-img-top" alt="Cloro"
+                    width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Cloro</h5>
+                    <p class="card-text">$13.690.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/salchichas.webp') }}" class="card-img-top"
+                    alt="Paquete de salchichas" width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Paquete de salchicas</h5>
+                    <p class="card-text">$5.800.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='imagenes/empanadas.jpg') }}" class="card-img-top"
+                    alt="Paquete de empanadas" width="200px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Paquete de empanadas</h5>
+                    <p class="card-text">$25.000.</p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <Footer>
+        <ul class="terminos_condiciones" id="Terminos">
+            <li>
+                <a class="International color_letra a_footer" href="">International</a>
+                <a class="politicas color_letra a_footer" href="">Política de Tratamiento de Datos</a>
+                <a class="reversion color_letra a_footer" href="">Reversión de Pagos</a>
+                <a class="terminos color_letra a_footer" href="">Términos y Condiciones</a>
+                <a class="politicas_de_A color_letra a_footer" href="">Política de Alérgenos</a>
+                <a class="sugerencias color_letra a_footer" href="">Sugerencias y Reclamos</a>
+                <a class="privacidad color_letra a_footer" href="">Aviso de privacidad</a>
+                <a class="directorio color_letra a_footer" href="">Directorio Tiendas</a>
+                <a class="facturacion color_letra a_footer" href="">Facturación Electrónica</a>
+                <a class="super color_letra a_footer" href="">Super. Ind y Comercio SIC</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{{ url_for('static', filename='imagenes/iconos_contacto.png') }}" alt="">
+
+            <li class="descargas">
+                <img src="{{ url_for('static', filename='imagenes/button-app-store-android.png') }}" alt=""
+                    width="120px">
+                <br>
+                <img src="{{ url_for('static', filename='imagenes/button-app-store-apple.svg') }}" alt="">
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='imagenes/footerSuperintendencia.jpg') }}" alt="" width="80px">
+                <img src="{{ url_for('static', filename='imagenes/footerOpenLunch.png') }}" alt="" width="80px">
+            <li>
+                <img src="{{ url_for('static', filename='imagenes/cybersource-a-visa-solution-tall.svg') }}" alt=""
+                    width="80px">
+                <img src="{{ url_for('static', filename='imagenes/footerVisa.jpg') }}" alt="" width="80px">
+            </li>
+            </li>
+
+            </li>
+        </ul>
+        <div class="info_footer">
+            <span>Suspensión indefinida de la promesa de valor 30 minutos o gratis:</span>
+        </div>
+
+    </Footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
+        integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
