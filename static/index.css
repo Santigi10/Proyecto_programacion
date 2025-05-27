@@ -149,6 +149,26 @@ footer{
     margin-top: 50px;
 }
 
+#carritoSlider{
+    position:fixed ;
+    top: 0;
+    right: -350px;
+    width: 350px;   
+    height: 100%;
+    background: #fff;
+    box-shadow:2px 0 8px rgba(0,0,0,0.2) ;
+    transition: 0.3s;
+    z-index: 1050;
+    overflow-y: auto;
+}
+#CarritoCompra{
+    padding: 20px;
+}
+
+#errarCarrito{
+    float: right;
+}
+
 
 
 
