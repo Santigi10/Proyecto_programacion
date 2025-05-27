@@ -29,13 +29,14 @@ def carrito():
             carrito_de_compras[producto] = {'cantidad': int(cantidad), 'precio': float(precio)}
     return redirect('/')
 
-@app.route('/eliminar/<int: cantidad')
-def eliminar_producto(producto):
-    if producto in carrito_de_compras:
-        del carrito_de_compras[producto]
+@app.route("/eliminar_producto", methods=["POST"])
+def eliminar_producto():
+    producto = request.form.get("producto")
+    if producto and producto in carrito_de_compras:
+        carrito_de_compras[producto]['cantidad'] -= 1
+        if carrito_de_compras[producto]['cantidad'] <= 0:
+            carrito_de_compras.pop(producto)
     return redirect('/')
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
