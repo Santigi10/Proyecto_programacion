@@ -16,8 +16,7 @@
     <nav>
         <div class="enlace_navegacion" id="Inicio">
             <div class="logo">
-                <img src="{{ url_for('static', filename='imagenes/image.png') }}" alt="" width="60px"
-                    height="60px">
+                <img src="{{ url_for('static', filename='imagenes/image.png') }}" alt="" width="60px" height="60px">
             </div>
             <ul>
                 <li>
@@ -45,13 +44,30 @@
         </div>
     </nav>
 
-    <div id="carritoSlider" >
+    <div id="carritoSlider">
         <div id="CarritoCompra">
+
             <button id="cerrarCarrito" class="btn btn-danger btn-sm">&times;</button>
             <h4>Carrito de compras</h4>
-            <p>Aquí aparecerán los productos agregados.</p>
+            <div id="productosCarrito">
+                <p id="mensajeCarrito">No hay productos en el carrito</p>
+            </div>
+            {% for id, carrito in carrito.items() %}
+
+            
+            <div class="productoCarrito">
+                <p>Producto: {{ id }}</p>
+                <p>Cantidad: {{ carrito.cantidad }}</p>
+                <p>Precio: {{ carrito.precio }}</p>
+                
+                <form action="/eliminar_producto" method="post" class="d-inline">
+                    <input type="hidden" name="producto" value="{{ id }}">
+                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                </form>
+            </div>
+          {% endfor %}
             <div id="Total">
-                <p>Total $0</p>
+                <p>Total ${{ total_pro }}</p>
             </div>
             <div id="BtnComprar">
                 <button id="Comprar" class="btn btn-primary btn-sm">Comprar</button>
@@ -95,7 +111,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Leche</h5>
                     <p class="card-text">$12.200.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Leche">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="12200">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -106,7 +128,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Carne</h5>
                     <p class="card-text">$15.300.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Carne">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="15300">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -117,7 +145,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Pollo</h5>
                     <p class="card-text">$14.800..</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Pollo">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="14800">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -128,7 +161,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Cereal Pre</h5>
                     <p class="card-text">$6.500.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Cereal Pre">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="6500">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -139,7 +178,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Yogurt</h5>
                     <p class="card-text">$2.300.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Yogurt">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="2300">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -150,7 +194,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Pan</h5>
                     <p class="card-text">$9.500.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Pan">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="9500">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -161,7 +210,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Papel de cocina</h5>
                     <p class="card-text">$10.000.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Papel de cocina">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="10000">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -172,7 +226,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Lonchera</h5>
                     <p class="card-text">$14.300.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Lonchera">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="14300">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -183,7 +242,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Verduras mixta</h5>
                     <p class="card-text">$20.000.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Verduras mixta">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="20000">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -194,7 +258,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Cloro</h5>
                     <p class="card-text">$13.690.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Cloro">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="13690">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -205,7 +274,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Paquete de salchicas</h5>
                     <p class="card-text">$5.800.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Paquete de salchichas">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="5800">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -216,7 +290,12 @@
                 <div class="card-body">
                     <h5 class="card-title">Paquete de empanadas</h5>
                     <p class="card-text">$25.000.</p>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <form action="/carrito" method="post">
+                        <input type="hidden" name="producto" value="Paquete de empanadas">
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="precio" value="25000">
+                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
