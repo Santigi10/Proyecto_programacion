@@ -66,12 +66,19 @@
                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                 </form>
             </div>
-          {% endfor %}
+            {% endfor %}
             <div id="Total">
                 <p>Total ${{ total_pro }}</p>
             </div>
+            {% if imagen_grafica %}
+            <div class="mt-3">
+                <h5>Gráfica del carrito:</h5>
+                <img src="data:image/png;base64,{{ imagen_grafica }}" class="img-fluid" alt="Gráfica del carrito">
+            </div>
+            {% endif %}
             <div id="BtnComprar">
                 <button id="Comprar" class="btn btn-primary btn-sm">Comprar</button>
+                <a href="/?grafica=1" id="Graficar" class="btn btn-primary btn-sm">Graficar carrito</a>
             </div>
         </div>
     </div>
